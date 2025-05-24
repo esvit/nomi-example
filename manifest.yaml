@@ -37,7 +37,7 @@ app:
 
     - id: 'payroll'
       panel: 'preview.payroll'
-      icon: 'payroll'
+      icon: 'card'
       title:
         en: 'Payroll'
         uk: 'Зарплата'
@@ -56,3 +56,58 @@ app:
         es: 'Tiempo'
         de: 'Zeit'
         fr: 'Temps'
+
+    - id: 'documents'
+      panel: 'preview.documents'
+      icon: 'file'
+      title:
+        en: 'Documents'
+        uk: 'Документи'
+        pl: 'Dokumenty'
+        es: 'Documentos'
+        de: 'Dokumente'
+        fr: 'Documents'
+
+    - id: 'projects'
+      panel: 'preview.projects'
+      icon: 'project_alt'
+      title:
+        en: 'Projects'
+        uk: 'Проекти'
+        pl: 'Projekty'
+        es: 'Proyectos'
+        de: 'Projekte'
+        fr: 'Projets'
+
+    - id: 'warehouse'
+      panel: 'preview.warehouse'
+      icon: 'warehouse'
+      title:
+        en: 'Warehouse'
+        uk: 'Склад'
+        pl: 'Magazyn'
+        es: 'Almacén'
+        de: 'Lager'
+        fr: 'Entrepôt'
+
+    - id: 'employees'
+      panel: 'preview.employees'
+      icon: 'user'
+      title:
+        en: 'Employees'
+        uk: 'Співробітники'
+        pl: 'Pracownicy'
+        es: 'Empleados'
+        de: 'Mitarbeiter'
+        fr: 'Employés'
+
+    - id: 'candidates'
+      panel: 'preview.candidates'
+      icon: 'user_plus'
+      title:
+        en: 'Candidates'
+        uk: 'Кандидати'
+        pl: 'Kandydaci'
+        es: 'Candidatos'
+        de: 'Kandidaten'
+        fr: 'Candidats'

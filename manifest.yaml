@@ -33,4 +33,26 @@ app:
         fr: "Exemple 1 Menu"
       panel: "example1_panel1"
       path: "finance/reports"
-      permissions: ["example1_read"]
+      permissions: []
+
+    - id: 'payroll'
+      panel: 'preview.payroll'
+      icon: 'payroll'
+      title:
+        en: 'Payroll'
+        uk: 'Зарплата'
+        pl: 'Wynagrodzenia'
+        es: 'Nómina'
+        de: 'Lohnbuchhaltung'
+        fr: 'Paie'
+
+    - id: 'time'
+      panel: 'preview.time'
+      icon: 'time'
+      title:
+        en: 'Time'
+        uk: 'Час'
+        pl: 'Czas'
+        es: 'Tiempo'
+        de: 'Zeit'
+        fr: 'Temps'

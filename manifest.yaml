@@ -1,18 +1,36 @@
 app:
   id: "example1"
   permissions:
-    - "example1_read"
-    - "example1_write"
+    example1_read: "Read Example 1"
+    example1_write:
+      en: "Write Example 1"
+      uk: "Записати приклад 1"
+      pl: "Zapisz przykład 1"
+      es: "Escribir ejemplo 1"
+      de: "Beispiel 1 schreiben"
+      fr: "Écrire exemple 1"
 
   panels:
     - id: "example1_panel1"
-      title: "Example 1"
+      title:
+        en: "Example 1 Panel"
+        uk: "Приклад 1 Панель"
+        pl: "Przykład 1 Panel"
+        es: "Ejemplo 1 Panel"
+        de: "Beispiel 1-Panel"
+        fr: "Exemple 1 Panneau"
       file: "index.html"
       permissions: ["example1_read"]
 
   menu:
     - id: "example1_menu1"
-      title: "Example 1"
+      title:
+        en: "Example 1 Menu"
+        uk: "Приклад 1 Меню"
+        pl: "Przykład 1 Menu"
+        es: "Ejemplo 1 Menú"
+        de: "Beispiel 1 Menü"
+        fr: "Exemple 1 Menu"
       panel: "example1_panel1"
       path: "finance/reports"
       permissions: ["example1_read"]

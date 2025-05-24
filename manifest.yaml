@@ -13,5 +13,6 @@ app:
   menu:
     - id: "example1_menu1"
       title: "Example 1"
+      panel: "example1_panel1"
       path: "finance/reports"
       permissions: ["example1_read"]

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://ui.itfin.dev/0.1.1/index.min.css">
+</head>
+<body>
+
+<div id="context"></div>
+
+<textarea resize id="textarea"></textarea>
+
+<script src="/build/bridge.js"></script>
+<script>
+  const context = nomiBridge.getContext();
+  document.getElementById('context').innerText = JSON.stringify(context, null, 2);
+
+  document.getElementById('textarea').addEventListener('input', () => {
+      nomiBridge.setModalPayload({ text: document.getElementById('textarea').value });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://ui.itfin.dev/0.1.1/index.min.css">
+</head>
+<body>
+
+<div id="context"></div>
+
+<button id="openModal">Open modal</button>
+<button id="changeRoute">Change route</button>
+
+<textarea resize id="textarea"></textarea>
+<span id="url"></span>
+
+<script src="/build/bridge.js"></script>
+<script>
+  const context = nomiBridge.getContext();
+  document.getElementById('context').innerText = JSON.stringify(context, null, 2);
+  document.getElementById('url').innerText = context.url;
+
+  function onClick(payload) {
+    document.getElementById('textarea').value = JSON.stringify(payload, null, 2);
+  }
+  document.getElementById('openModal').addEventListener('click', () => {
+    nomiBridge.openModal('/examples/modal.html', {
+      title: 'Hello',
+      payload: { text: 'Hello' },
+      buttons: [
+        { text: 'Cancel', style: 'link', onClick },
+        { text: 'OK', style: 'primary', onClick },
+      ]
+    });
+  });
+  document.getElementById('changeRoute').addEventListener('click', () => {
+    nomiBridge.pushRoute(`/index.html?${Math.random()}`);
+  });
+
+  window.addEventListener('bridge:routeChange', (event) => {
+    document.getElementById('url').innerText = event.url;
+  });
+</script>
+</body>
+</html>

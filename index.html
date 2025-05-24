@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    nomi-host-frame {
+      display: block;
+    }
+    nomi-host-frame iframe {
+      width: 100%;
+    }
+  </style>
+  <link rel="stylesheet" href="https://ui.itfin.dev/0.1.1/index.min.css">
+</head>
+<body class="p-5">
+
+<div class="container">
+<div class="card">
+  <div class="card-header">Embed documents</div>
+  <div class="card-body">
+
+    <nomi-host-frame id="frame" route-mode="history" placement="itfin:employeeDetails"></nomi-host-frame>
+  </div>
+</div>
+</div>
+
+
+<div id="myModal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <nomi-host-frame route-mode="none" id="modalFrame"></nomi-host-frame>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/build/host.js"></script>
+<script>
+  let modal;
+  window.addEventListener('load', () => {
+    const frame = document.getElementById('frame');
+    const config = {
+      viewerId: "testId",
+      tenantId: "1",
+      applicationSlug: 'test123',
+      endpointUrl: 'https://localhost:3000',
+      frameUrl: 'https://localhost:8086/examples/frame.html',
+      locale: 'uk_UA',
+      routePrefix: '/src/views'
+    };
+    frame.initFrame(config);
+    frame.onCloseModal = (id) => {
+      console.info(id);
+      modal.hide();
+    }
+    frame.onOpenModal = (id, url, params) => {
+      modal = new bootstrap.Modal('#myModal', {})
+      modal._element.addEventListener('shown.bs.modal', () => {
+        const innerFrame = document.getElementById('modalFrame');
+        document.getElementById('modalTitle').innerText = params.title;
+        document.querySelector('.modal-footer').innerHTML = '';
+        for (const button of params.buttons) {
+          const buttonElement = document.createElement('button');
+          buttonElement.innerText = button.text;
+          buttonElement.classList.add('btn', `btn-${button.style || 'secondary'}`);
+          buttonElement.addEventListener('click', () => {
+            button.onClick(innerFrame.getModalPayload(id));
+          });
+          document.querySelector('.modal-footer').appendChild(buttonElement);
+        }
+        innerFrame.initFrame({
+          ...config,
+          frameUrl: url,
+          modalId: id,
+          modalPayload: params.payload,
+        });
+      });
+      modal.show();
+    };
+
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

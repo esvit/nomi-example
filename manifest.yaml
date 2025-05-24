@@ -1,0 +1,17 @@
+app:
+  id: "example1"
+  permissions:
+    - "example1_read"
+    - "example1_write"
+
+  panels:
+    - id: "example1_panel1"
+      title: "Example 1"
+      file: "index.html"
+      permissions: ["example1_read"]
+
+  menu:
+    - id: "example1_menu1"
+      title: "Example 1"
+      path: "finance/reports"
+      permissions: ["example1_read"]

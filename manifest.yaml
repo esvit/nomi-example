@@ -22,18 +22,18 @@ app:
       file: "index.html"
       permissions: ["example1_read"]
 
-  menu:
-    - id: "example1_menu1"
-      title:
-        en: "Example 1 Menu"
-        uk: "Приклад 1 Меню"
-        pl: "Przykład 1 Menu"
-        es: "Ejemplo 1 Menú"
-        de: "Beispiel 1 Menü"
-        fr: "Exemple 1 Menu"
-      panel: "example1_panel1"
-      path: "finance/reports"
-      permissions: []
+  # menu:
+  #   - id: "example1_menu1"
+  #     title:
+  #       en: "Example 1 Menu"
+  #       uk: "Приклад 1 Меню"
+  #       pl: "Przykład 1 Menu"
+  #       es: "Ejemplo 1 Menú"
+  #       de: "Beispiel 1 Menü"
+  #       fr: "Exemple 1 Menu"
+  #     panel: "example1_panel1"
+  #     path: "finance/reports"
+  #     permissions: []
 
     - id: 'payroll'
       panel: 'preview.payroll'

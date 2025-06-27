@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    html, body { padding: 0; margin: 0; height: 100%; width: 100%; overflow: hidden; }
+    div {
+      height: 100% !important;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<div id="form"></div>
+
+<script src="/build/bridge.js"></script>
+<script>
+  async function bootstrap() {
+    const context = nomiBridge.getContext();
+    const { module } = context.payload || {};
+
+    switch (module) {
+      case 'payroll':
+        document.getElementById('form').innerHTML = '<div data-tf-live="01JW4HY2MXASHFKZ26AXJ09QQY"></div>';
+        break;
+      default:
+        document.getElementById('form').innerHTML = '<div data-tf-live="01JW3MTSG3ACRGTZJ58B9JJRH3"></div>';
+        break;
+        document.getElementById('form').innerHTML = `<div>Unknown module: ${module}</div>`;
+    }
+    const script = document.createElement('script');
+    script.src = 'https://embed.typeform.com/next/embed.js';
+    document.body.appendChild(script);
+
+    const res = await fetch("https://api.nomi.tools/v1/auth/signup/taxonomies", {
+      "headers": { "accept": "application/json" }
+    });
+    const json = await res.json();
+
+    const details = json.modules.find(m => m.id === module);
+    // document.getElementById('title').innerText = details.title;
+    nomiBridge.setPanelTitle(`Опитування "${details.title}"`);
+
+  }
+  bootstrap();
+</script>
+</body>
+</html>

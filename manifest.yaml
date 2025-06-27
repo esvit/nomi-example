@@ -1,42 +1,22 @@
 app:
   id: "nomi_preview"
-  permissions:
-    example1_read: "Read Example 1"
-    example1_write:
-      en: "Write Example 1"
-      uk: "Записати приклад 1"
-      pl: "Zapisz przykład 1"
-      es: "Escribir ejemplo 1"
-      de: "Beispiel 1 schreiben"
-      fr: "Écrire exemple 1"
 
   panels:
-    - id: "example1_panel1"
-      title:
-        en: "Example 1 Panel"
-        uk: "Приклад 1 Панель"
-        pl: "Przykład 1 Panel"
-        es: "Ejemplo 1 Panel"
-        de: "Beispiel 1-Panel"
-        fr: "Exemple 1 Panneau"
-      file: "index.html"
-      permissions: ["example1_read"]
-
-  menu:
-    - id: "example1_menu1"
-      title:
-        en: "Example 1 Menu"
-        uk: "Приклад 1 Меню"
-        pl: "Przykład 1 Menu"
-        es: "Ejemplo 1 Menú"
-        de: "Beispiel 1 Menü"
-        fr: "Exemple 1 Menu"
-      panel: "example1_panel1"
-      path: "finance/reports"
+    - id: "nm_preview"
+      title: "Завантаження..."
+      file: "frame.html"
       permissions: []
 
+    - id: "nm_request_tf"
+      title: "Завантаження..."
+      file: "typeform.html"
+      permissions: []
+
+  menu:
     - id: 'payroll'
-      panel: 'preview.payroll'
+      panel: "nm_preview"
+      payload:
+        module: "payroll"
       icon: 'card'
       title:
         en: 'Payroll'
@@ -47,7 +27,9 @@ app:
         fr: 'Paie'
 
     - id: 'time'
-      panel: 'preview.time'
+      panel: "nm_preview"
+      payload:
+        module: "time"
       icon: 'time'
       title:
         en: 'Time'
@@ -58,7 +40,9 @@ app:
         fr: 'Temps'
 
     - id: 'documents'
-      panel: 'preview.documents'
+      panel: "nm_preview"
+      payload:
+        module: "documents"
       icon: 'file'
       title:
         en: 'Documents'
@@ -69,7 +53,9 @@ app:
         fr: 'Documents'
 
     - id: 'projects'
-      panel: 'preview.projects'
+      panel: "nm_preview"
+      payload:
+        module: "projects"
       icon: 'project_alt'
       title:
         en: 'Projects'
@@ -80,7 +66,9 @@ app:
         fr: 'Projets'
 
     - id: 'warehouse'
-      panel: 'preview.warehouse'
+      panel: "nm_preview"
+      payload:
+        module: "inventory"
       icon: 'warehouse'
       title:
         en: 'Warehouse'
@@ -91,18 +79,22 @@ app:
         fr: 'Entrepôt'
 
     - id: 'employees'
-      panel: 'preview.employees'
+      panel: "nm_preview"
+      payload:
+        module: "hrm"
       icon: 'user'
       title:
         en: 'Employees'
-        uk: 'Співробітники'
+        uk: 'Працівники'
         pl: 'Pracownicy'
         es: 'Empleados'
         de: 'Mitarbeiter'
         fr: 'Employés'
 
     - id: 'candidates'
-      panel: 'preview.candidates'
+      panel: "nm_preview"
+      payload:
+        module: "ats"
       icon: 'user_plus'
       title:
         en: 'Candidates'

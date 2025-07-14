@@ -26,19 +26,6 @@ app:
         de: 'Lohnbuchhaltung'
         fr: 'Paie'
 
-    - id: 'time'
-      panel: "nm_preview"
-      payload:
-        module: "time"
-      icon: 'time'
-      title:
-        en: 'Time'
-        uk: 'Час'
-        pl: 'Czas'
-        es: 'Tiempo'
-        de: 'Zeit'
-        fr: 'Temps'
-
     - id: 'documents'
       panel: "nm_preview"
       payload:
@@ -52,54 +39,67 @@ app:
         de: 'Dokumente'
         fr: 'Documents'
 
-    - id: 'projects'
+    - id: 'time'
       panel: "nm_preview"
       payload:
-        module: "projects"
-      icon: 'project_alt'
+        module: "time"
+      icon: 'time'
       title:
-        en: 'Projects'
-        uk: 'Проекти'
-        pl: 'Projekty'
-        es: 'Proyectos'
-        de: 'Projekte'
-        fr: 'Projets'
+        en: 'Time'
+        uk: 'Час'
+        pl: 'Czas'
+        es: 'Tiempo'
+        de: 'Zeit'
+        fr: 'Temps'
 
-    - id: 'warehouse'
-      panel: "nm_preview"
-      payload:
-        module: "inventory"
-      icon: 'warehouse'
-      title:
-        en: 'Warehouse'
-        uk: 'Склад'
-        pl: 'Magazyn'
-        es: 'Almacén'
-        de: 'Lager'
-        fr: 'Entrepôt'
-
-    - id: 'employees'
-      panel: "nm_preview"
-      payload:
-        module: "hrm"
-      icon: 'user'
-      title:
-        en: 'Employees'
-        uk: 'Працівники'
-        pl: 'Pracownicy'
-        es: 'Empleados'
-        de: 'Mitarbeiter'
-        fr: 'Employés'
-
-    - id: 'candidates'
-      panel: "nm_preview"
-      payload:
-        module: "ats"
-      icon: 'user_plus'
-      title:
-        en: 'Candidates'
-        uk: 'Кандидати'
-        pl: 'Kandydaci'
-        es: 'Candidatos'
-        de: 'Kandidaten'
-        fr: 'Candidats'
+#    - id: 'projects'
+#      panel: "nm_preview"
+#      payload:
+#        module: "projects"
+#      icon: 'project_alt'
+#      title:
+#        en: 'Projects'
+#        uk: 'Проекти'
+#        pl: 'Projekty'
+#        es: 'Proyectos'
+#        de: 'Projekte'
+#        fr: 'Projets'
+#
+#    - id: 'warehouse'
+#      panel: "nm_preview"
+#      payload:
+#        module: "inventory"
+#      icon: 'warehouse'
+#      title:
+#        en: 'Warehouse'
+#        uk: 'Склад'
+#        pl: 'Magazyn'
+#        es: 'Almacén'
+#        de: 'Lager'
+#        fr: 'Entrepôt'
+#
+#    - id: 'employees'
+#      panel: "nm_preview"
+#      payload:
+#        module: "hrm"
+#      icon: 'user'
+#      title:
+#        en: 'Employees'
+#        uk: 'Працівники'
+#        pl: 'Pracownicy'
+#        es: 'Empleados'
+#        de: 'Mitarbeiter'
+#        fr: 'Employés'
+#
+#    - id: 'candidates'
+#      panel: "nm_preview"
+#      payload:
+#        module: "ats"
+#      icon: 'user_plus'
+#      title:
+#        en: 'Candidates'
+#        uk: 'Кандидати'
+#        pl: 'Kandydaci'
+#        es: 'Candidatos'
+#        de: 'Kandidaten'
+#        fr: 'Candidats'

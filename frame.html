@@ -248,7 +248,7 @@
 <script>
   async function bootstrap() {
     const res = await fetch("https://api.nomi.tools/v1/auth/signup/taxonomies", {
-      "headers": { "accept": "application/json" }
+      "headers": { "accept": "application/json", 'accept-language': 'uk' }
     });
     const json = await res.json();
 
